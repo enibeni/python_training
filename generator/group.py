@@ -21,15 +21,16 @@ for o, a in opts:
     elif o == "-f":
         f = a
 
+
 def random_string(prefix, maxlem):
     symbols = string.ascii_letters + string.digits + string.punctuation + " " * 10
     return prefix + "".join([random.choice(symbols) for i in range(random.randrange(maxlem))])
 
 
 testdata = [Group(name="", header="header", footer="footer")] + [
-        Group(name=random_string("name", 10), header=random_string("header", 10), footer=random_string("footer", 10))
-        for i in range(n)
-]
+    Group(name=random_string("name", 10), header=random_string("header", 10), footer=random_string("footer", 10))
+    for i in range(n)
+    ]
 
 file = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", f)
 
